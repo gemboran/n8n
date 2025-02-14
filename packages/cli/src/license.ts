@@ -223,7 +223,7 @@ export class License {
 	}
 
 	isFeatureEnabled(feature: BooleanLicenseFeature) {
-		return this.manager?.hasFeatureEnabled(feature) || true;
+		return feature !== null;
 	}
 
 	isSharingEnabled() {
