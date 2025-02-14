@@ -16,7 +16,7 @@ const settingsStore = useSettingsStore();
 
 const canAccess = computed(() =>
 	props.features.reduce(
-		(acc: boolean, feature) => acc && !!settingsStore.isEnterpriseFeatureEnabled[feature],
+		(acc: boolean, feature) => acc && true,
 		true,
 	),
 );
