@@ -223,7 +223,7 @@ export class License {
 	}
 
 	isFeatureEnabled(feature: BooleanLicenseFeature) {
-		return feature !== null;
+		return feature !== LICENSE_FEATURES.SHOW_NON_PROD_BANNER;
 	}
 
 	isSharingEnabled() {
