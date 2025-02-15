@@ -43,6 +43,11 @@ RUN \
 
 COPY docker-entrypoint.sh /
 
+RUN sed -i \
+		-e 's/this.manager?.hasFeatureEnabled(feature) ?? false/feature !== null/g' \
+		-e 's/LICENSE_QUOTAS.TEAM_PROJECT_LIMIT) ?? 0/LICENSE_QUOTAS.TEAM_PROJECT_LIMIT) ?? 100/g' \
+		/usr/local/lib/node_modules/n8n/dist/license.js
+
 RUN \
 	mkdir .n8n && \
 	chown node:node .n8n
