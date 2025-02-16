@@ -223,7 +223,13 @@ export class License {
 	}
 
 	isFeatureEnabled(feature: BooleanLicenseFeature) {
-		return feature !== 'feat:showNonProdBanner';
+		return ![
+			'feat:showNonProdBanner',
+			'feat:aiAssistant',
+			'feat:askAi',
+			'feat:aiCredits',
+			'feat:apiDisabled',
+		].includes(feature);
 	}
 
 	isSharingEnabled() {
@@ -381,7 +387,7 @@ export class License {
 	}
 
 	getTeamProjectLimit() {
-		return this.getFeatureValue(LICENSE_QUOTAS.TEAM_PROJECT_LIMIT) ?? 100;
+		return this.getFeatureValue(LICENSE_QUOTAS.TEAM_PROJECT_LIMIT) ?? 1000;
 	}
 
 	getPlanName(): string {

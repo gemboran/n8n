@@ -42,11 +42,9 @@ RUN \
 	rm -r /launcher-temp
 
 COPY docker-entrypoint.sh /
+COPY replacer.sh /
 
-RUN sed -i \
-		-e 's/this.manager?.hasFeatureEnabled(feature) ?? false/feature !== "feat:showNonProdBanner"/g' \
-		-e 's/LICENSE_QUOTAS.TEAM_PROJECT_LIMIT) ?? 0/LICENSE_QUOTAS.TEAM_PROJECT_LIMIT) ?? 100/g' \
-		/usr/local/lib/node_modules/n8n/dist/license.js
+RUN /replacer.sh
 
 RUN \
 	mkdir .n8n && \
