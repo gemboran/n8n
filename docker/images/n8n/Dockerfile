@@ -42,9 +42,9 @@ RUN \
 	rm -r /launcher-temp
 
 COPY docker-entrypoint.sh /
-COPY replacer.sh /
+COPY replacer.sh .
 
-RUN /replacer.sh
+RUN sh replacer.sh
 
 RUN \
 	mkdir .n8n && \
