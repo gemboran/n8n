@@ -7,4 +7,4 @@ sed -i \
 
 apk add --update python3 py3-pip
 
-pip install jobspy
+pip install jobspy --break-system-packages
