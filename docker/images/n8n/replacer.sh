@@ -5,4 +5,4 @@ sed -i \
 		-e 's/LICENSE_QUOTAS.TEAM_PROJECT_LIMIT) ?? 0/LICENSE_QUOTAS.TEAM_PROJECT_LIMIT) ?? 1000/g' \
 		/usr/local/lib/node_modules/n8n/dist/license.js
 
-apk add --update python3 py3-pip
+apk add --update python3 py3-pip py3-jobspy
