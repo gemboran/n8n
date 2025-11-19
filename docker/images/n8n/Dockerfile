@@ -51,7 +51,7 @@ ENV SHELL=/bin/sh
 
 WORKDIR /home/node
 
-COPY --from=app-artifact-processor /app /usr/local/lib/node_modules/n8n
+# COPY --from=app-artifact-processor /app /usr/local/lib/node_modules/n8n
 COPY --from=launcher-downloader /launcher-bin/* /usr/local/bin/
 COPY docker/images/n8n/docker-entrypoint.sh /
 COPY docker/images/n8n/n8n-task-runners.json /etc/n8n-task-runners.json
